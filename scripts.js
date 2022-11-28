@@ -87,3 +87,40 @@ function convertToDecimal(numero){
     }
     return resultFinal;
 }
+//EXERCÍCIO 06: Converter qualquer número decimal para binário:
+
+function convertToDecimal2(numero,base){
+    
+    var arrNumero = numero.split("");
+
+    var posicao = arrNumero.length -1;
+    var resultDeCadaAlgarismo = 0;
+    var resultFinal = 0;
+    var numeroNovo = 0;
+    for (i=0;i<arrNumero.length;i++){
+      console.log (arrNumero[i] + "=" + returnDecimalByHexa(arrNumero[i]));
+      if(isNaN(arrNumero[i]))
+        numeroNovo = returnDecimalByHexa(arrNumero[i])
+     else 
+        numeroNovo = arrNumero[i];
+     resultDeCadaAlgarismo =(numeroNovo * (base**posicao));
+     resultFinal = resultFinal + resultDeCadaAlgarismo;
+     posicao--;
+    }
+    return resultFinal;
+}
+function returnDecimalByHexa(letra){
+    switch (letra){
+        case "A":
+            return 10;
+        case "B":
+            return 11;
+        case "C":
+            return 12;
+        case "D":
+            return 13;
+        default:
+            break;
+    }
+
+}
